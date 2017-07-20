@@ -42,7 +42,6 @@ class SizeClass
 	}
 }
 
-
 class StandardFiltersTest extends TestCase
 {
 	/**
@@ -478,9 +477,9 @@ class StandardFiltersTest extends TestCase
 	}
 
 /*
-	
+
 	I've commented this out as its not one of the Ruby Standard Filters
-	
+
 	public function testSortKey() {
 		$data = array(
 			array(
@@ -503,7 +502,7 @@ class StandardFiltersTest extends TestCase
 		$this->assertEquals('hello', StandardFilters::_default('', 'hello'));
 		$this->assertEquals('world', StandardFilters::_default('world', 'hello'));
 	}
-	
+
 	public function testUnique() {
 		$data = array(
 			array(

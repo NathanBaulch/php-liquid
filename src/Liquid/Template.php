@@ -83,7 +83,7 @@ class Template
 			} else {
 				throw new LiquidException('Invalid cache options!');
 			}
-		} else if ($cache instanceof Cache) {
+		} elseif ($cache instanceof Cache) {
 			self::$cache = $cache;
 		}
 	}

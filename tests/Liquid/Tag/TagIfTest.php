@@ -56,7 +56,6 @@ class TagIfTest extends TestCase
 		$expected = "  false  ";
 		$this->assertTemplateResult($expected, $text);
 
-
 		$text = " {% if 0 <= null %} true {% else %} false {% endif %} ";
 		$expected = "  false  ";
 		$this->assertTemplateResult($expected, $text);

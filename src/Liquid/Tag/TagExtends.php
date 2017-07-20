@@ -81,7 +81,7 @@ class TagExtends extends AbstractTag
 			if ($blockstartRegexp->match($token)) {
 				$name = $blockstartRegexp->matches[1];
 				$b[$name] = array();
-			} else if ($blockendRegexp->match($token)) {
+			} elseif ($blockendRegexp->match($token)) {
 				$name = null;
 			} else {
 				if ($name !== null) {

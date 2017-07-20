@@ -16,7 +16,7 @@ namespace Liquid;
  */
 class StandardFilters
 {
-	
+
 	/**
 	 * Add one string to another
 	 *
@@ -28,7 +28,6 @@ class StandardFilters
 	public static function append($input, $string) {
 		return $input . $string;
 	}
-	
 
 	/**
 	 * Capitalize words in the input sentence
@@ -41,8 +40,7 @@ class StandardFilters
 		return preg_replace_callback("/(^|[^\p{L}'])([\p{Ll}])/u", function($matches) {
 			return $matches[1] . ucfirst($matches[2]);
 		}, ucwords($input));
-	}	
-	
+	}
 
 	/**
 	 * @param mixed $input number
@@ -52,7 +50,6 @@ class StandardFilters
 	public static function ceil($input) {
 		return (int) ceil((float)$input);
 	}
-	
 
 	/**
 	 * Formats a date using strftime
@@ -72,9 +69,8 @@ class StandardFilters
 
 		return strftime($format, $input);
 
-	}	
-	
-	
+	}
+
 	/**
 	 * Default
 	 *
@@ -87,8 +83,7 @@ class StandardFilters
 		$isBlank = $input == '' || $input === false || $input === null;
 		return $isBlank ? $default_value : $input;
 	}
-	
-	
+
 	/**
 	 * division
 	 *
@@ -100,8 +95,7 @@ class StandardFilters
 	public static function divided_by($input, $operand) {
 		return (int)$input / (int)$operand;
 	}
-		
-	
+
 	/**
 	 * Convert an input to lowercase
 	 *
@@ -112,8 +106,7 @@ class StandardFilters
 	public static function downcase($input) {
 		return is_string($input) ? strtolower($input) : $input;
 	}
-	
-	
+
 	/**
 	 * Pseudo-filter: negates auto-added escape filter
 	 *
@@ -136,7 +129,6 @@ class StandardFilters
 		return is_string($input) ? htmlentities($input, ENT_QUOTES) : $input;
 	}
 
-
 	/**
 	 * Escape a string once, keeping all previous HTML entities intact
 	 *
@@ -147,7 +139,6 @@ class StandardFilters
 	public static function escape_once($input) {
 		return is_string($input) ? htmlentities($input, ENT_QUOTES, null, false) : $input;
 	}
-
 
 	/**
 	 * Returns the first element of an array
@@ -162,9 +153,8 @@ class StandardFilters
 			return $input->current();
 		}
 		return is_array($input) ? reset($input) : $input;
-	}	
-	
-	
+	}
+
 	/**
 	 * @param mixed $input number
 	 *
@@ -172,9 +162,8 @@ class StandardFilters
 	 */
 	public static function floor($input) {
 		return (int) floor((float)$input);
-	}	
-	
-	
+	}
+
 	/**
 	 * Joins elements of an array with a given character between them
 	 *
@@ -196,8 +185,7 @@ class StandardFilters
 		}
 		return is_array($input) ? implode($glue, $input) : $input;
 	}
-	
-	
+
 	/**
 	 * Returns the last element of an array
 	 *
@@ -214,8 +202,7 @@ class StandardFilters
 			return $last;
 		}
 		return is_array($input) ? end($input) : $input;
-	}	
-	
+	}
 
 	/**
 	 * @param string $input
@@ -224,9 +211,8 @@ class StandardFilters
 	 */
 	public static function lstrip($input) {
 		return ltrim($input);
-	}	
-	
-	
+	}
+
 	/**
 	 * Map/collect on a given property
 	 *
@@ -251,7 +237,6 @@ class StandardFilters
 			return null;
 		}, $input);
 	}
-	
 
 	/**
 	 * subtraction
@@ -264,8 +249,7 @@ class StandardFilters
 	public static function minus($input, $operand) {
 		return (int)$input - (int)$operand;
 	}
-	
-	
+
 	/**
 	 * modulo
 	 *
@@ -276,9 +260,8 @@ class StandardFilters
 	 */
 	public static function modulo($input, $operand) {
 		return (int)$input % (int)$operand;
-	}	
-	
-	
+	}
+
 	/**
 	 * Replace each newline (\n) with html break
 	 *
@@ -290,8 +273,7 @@ class StandardFilters
 		return is_string($input) ? str_replace(array(
 			"\n", "\r"
 		), '<br />', $input) : $input;
-	}	
-	
+	}
 
 	/**
 	 * addition
@@ -303,8 +285,7 @@ class StandardFilters
 	 */
 	public static function plus($input, $operand) {
 		return (int)$input + (int)$operand;
-	}	
-	
+	}
 
 	/**
 	 * Prepend a string to another
@@ -317,7 +298,6 @@ class StandardFilters
 	public static function prepend($input, $string) {
 		return $string . $input;
 	}
-	
 
 	/**
 	 * Remove a substring
@@ -330,7 +310,6 @@ class StandardFilters
 	public static function remove($input, $string) {
 		return str_replace($string, '', $input);
 	}
-
 
 	/**
 	 * Remove the first occurrences of a substring
@@ -346,8 +325,7 @@ class StandardFilters
 		}
 
 		return $input;
-	}	
-	
+	}
 
 	/**
 	 * Replace occurrences of a string with another
@@ -361,7 +339,6 @@ class StandardFilters
 	public static function replace($input, $string, $replacement = '') {
 		return str_replace($string, $replacement, $input);
 	}
-
 
 	/**
 	 * Replace the first occurrences of a string with another
@@ -379,8 +356,7 @@ class StandardFilters
 
 		return $input;
 	}
-	
-	
+
 	/**
 	 * Reverse the elements of an array
 	 *
@@ -394,8 +370,7 @@ class StandardFilters
 		}
 		return array_reverse($input);
 	}
-	
-	
+
 	/**
 	 * Round a number
 	 *
@@ -406,9 +381,8 @@ class StandardFilters
 	 */
 	public static function round($input, $n = 0) {
 		return round((float)$input, (int)$n);
-	}	
-	
-	
+	}
+
 	/**
 	 * @param string $input
 	 *
@@ -416,9 +390,8 @@ class StandardFilters
 	 */
 	public static function rstrip($input) {
 		return rtrim($input);
-	}	
-									
-	
+	}
+
 	/**
 	 * Return the size of an array or of an string
 	 *
@@ -442,7 +415,6 @@ class StandardFilters
 
 		return $input;
 	}
-	
 
 	/**
 	 * @param array|\Iterator|string $input
@@ -465,8 +437,7 @@ class StandardFilters
 
 		return $input;
 	}
-	
-	
+
 	/**
 	 * Sort the elements of an array
 	 *
@@ -495,8 +466,7 @@ class StandardFilters
 		}
 
 		return $input;
-	}	
-	
+	}
 
 	/**
 	 * Split input string into an array of substrings separated by given pattern.
@@ -510,7 +480,6 @@ class StandardFilters
 		return explode($pattern, $input);
 	}
 
-
 	/**
 	 * @param string $input
 	 *
@@ -519,8 +488,7 @@ class StandardFilters
 	public static function strip($input) {
 		return trim($input);
 	}
-	
-	
+
 	/**
 	 * Removes html tags from text
 	 *
@@ -531,7 +499,6 @@ class StandardFilters
 	public static function strip_html($input) {
 		return is_string($input) ? strip_tags($input) : $input;
 	}
-	
 
 	/**
 	 * Strip all newlines (\n, \r) from string
@@ -544,8 +511,7 @@ class StandardFilters
 		return is_string($input) ? str_replace(array(
 			"\n", "\r"
 		), '', $input) : $input;
-	}	
-	
+	}
 
 	/**
 	 * multiplication
@@ -558,7 +524,6 @@ class StandardFilters
 	public static function times($input, $operand) {
 		return (int)$input * (int)$operand;
 	}
-	
 
 	/**
 	 * Truncate a string down to x characters
@@ -578,7 +543,6 @@ class StandardFilters
 
 		return $input;
 	}
-		
 
 	/**
 	 * Truncate string down to x words
@@ -599,8 +563,7 @@ class StandardFilters
 		}
 
 		return $input;
-	}	
-	
+	}
 
 	/**
 	 * Remove duplicate elements from an array
@@ -615,7 +578,7 @@ class StandardFilters
 		}
 		return array_unique($input);
 	}
-	
+
 	/**
 	 * Convert an input to uppercase
 	 *
@@ -637,8 +600,7 @@ class StandardFilters
 	public static function url_encode($input) {
 		return urlencode($input);
 	}
-	
-	
+
 	/**
 	 * Use overloading to get around reserved php words - in this case 'default'
 	 *
@@ -649,9 +611,9 @@ class StandardFilters
 	 *
 	 */
 	public function __call($name, $arguments) {
-        if ($name === 'default') {
-            return $this->_default($arguments[0], $arguments[1]);
-        }
-    }
+		if ($name === 'default') {
+			return $this->_default($arguments[0], $arguments[1]);
+		}
+	}
 
 }

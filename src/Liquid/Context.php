@@ -250,7 +250,7 @@ class Context
 		if (is_object($object)) {
 			if (method_exists($object, 'toLiquid')) {
 				$object = $object->toLiquid();
-			} else if (method_exists($object, 'toArray')) {
+			} elseif (method_exists($object, 'toArray')) {
 				$object = $object->toArray();
 			}
 			// we'll cover regular objects later
