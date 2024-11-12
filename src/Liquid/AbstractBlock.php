@@ -65,7 +65,7 @@ class AbstractBlock extends AbstractTag
 			if ($startRegexp->match($token)) {
 				$this->whitespaceHandler($token);
 				if ($tagRegexp->match($token)) {
-					// If we found the proper block delimitor just end parsing here and let the outer block proceed
+					// If we found the proper block delimiter just end parsing here and let the outer block proceed
 					if ($tagRegexp->matches[1] == $this->blockDelimiter()) {
 						$this->endTag();
 						return;

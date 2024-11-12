@@ -14,7 +14,7 @@ This is a comment block
 		<p>{{ document.content }}</p>
 		<p><a href="simple.php">Link to simple.php</a></p>
         {% if blog %}
-        Total Blogentrys: {{ blog | size }}
+        Total Blog entries: {{ blog | size }}
         <ul id="products">
           {% for entry in blog %}
             <li>
@@ -31,7 +31,7 @@ This is a comment block
                 {% endfor %}
 
                 {% if freestyle %}
-                    <p>Blogentry has tag: freestyle</p>
+                    <p>Blog entry has tag: freestyle</p>
                 {% endif %}
 
             </li>      

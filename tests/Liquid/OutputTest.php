@@ -90,7 +90,7 @@ class OutputTest extends TestCase
 		$this->assertTemplateResult($expected, $text, $this->assigns);
 	}
 
-	public function testVariableTrasversing()
+	public function testVariableTraversing()
 	{
 		$text = " {{car.bmw}} {{car.gm}} {{car.bmw}} ";
 

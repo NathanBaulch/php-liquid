@@ -11,7 +11,7 @@
 
 namespace Liquid;
 
-class HundredCentes
+class HundredCents
 {
 	public function toLiquid()
 	{
@@ -31,7 +31,7 @@ class CentsDrop extends Drop
 {
 	public function amount()
 	{
-		return new HundredCentes();
+		return new HundredCents();
 	}
 }
 
@@ -357,13 +357,13 @@ class ContextTest extends TestCase
 		$this->assertNull($this->context->get('example.foo.bar'));
 	}
 
-	public function testHierchalData()
+	public function testHierarchicalData()
 	{
 		$this->context->set('hash', array('name' => 'tobi'));
 		$this->assertEquals('tobi', $this->context->get('hash.name'));
 	}
 
-	public function testHierchalDataNoKey()
+	public function testHierarchicalDataNoKey()
 	{
 		$this->context->set('hash', array('name' => 'tobi'));
 		$this->assertNull($this->context->get('hash.no_key'));
@@ -433,16 +433,16 @@ class ContextTest extends TestCase
 
 	public function testCents()
 	{
-		$this->context->merge(array('cents' => new HundredCentes()));
+		$this->context->merge(array('cents' => new HundredCents()));
 		$this->assertEquals(100, $this->context->get('cents'));
 	}
 
 	public function testNestedCents()
 	{
-		$this->context->merge(array('cents' => array('amount' => new HundredCentes())));
+		$this->context->merge(array('cents' => array('amount' => new HundredCents())));
 		$this->assertEquals(100, $this->context->get('cents.amount'));
 
-		$this->context->merge(array('cents' => array('cents' => array('amount' => new HundredCentes()))));
+		$this->context->merge(array('cents' => array('cents' => array('amount' => new HundredCents()))));
 		$this->assertEquals(100, $this->context->get('cents.cents.amount'));
 	}
 
@@ -465,7 +465,7 @@ class ContextTest extends TestCase
 	{
 		$_GET['test'] = '<script>alert()</script>';
 		// Previously $_GET would override directly set values
-		// It happend during class construction - we need to create a brand new instance right here
+		// It happened during class construction - we need to create a brand new instance right here
 		$context = new Context();
 		$context->set('test', 'test');
 		$this->assertEquals('test', $context->get('test'));

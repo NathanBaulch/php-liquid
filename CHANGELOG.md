@@ -52,7 +52,7 @@
 
 ## 1.3.1 (2017-09-23)
 
- * Support for numeric and variable array indicies
+ * Support for numeric and variable array indices
  * Support loop break and continue
  * Allow looping over extended ranges
  * Math filters now work with floats

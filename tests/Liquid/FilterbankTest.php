@@ -176,7 +176,7 @@ namespace Liquid {
 		}
 
 		/**
-		 * Test using an object as a filter; an object fiter will retain its state
+		 * Test using an object as a filter; an object filter will retain its state
 		 * between calls to its filters.
 		 */
 		public function testObjectFilter()

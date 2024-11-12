@@ -291,7 +291,7 @@ class Context
 	 */
 	private function variable($key)
 	{
-		// Support numeric and variable array indicies
+		// Support numeric and variable array indices
 		if (preg_match("|\[[0-9]+\]|", $key)) {
 			$key = preg_replace("|\[([0-9]+)\]|", ".$1", $key);
 		} elseif (preg_match("|\[[0-9a-z._]+\]|", $key, $matches)) {
@@ -412,7 +412,7 @@ class Context
 				continue;
 			}
 
-			// Inexistent property is a null, PHP-speak
+			// Nonexistent property is a null, PHP-speak
 			if (!property_exists($object, $nextPartName)) {
 				return null;
 			}

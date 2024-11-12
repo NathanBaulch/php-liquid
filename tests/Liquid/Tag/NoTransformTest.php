@@ -27,7 +27,7 @@ class NoTransformTest extends TestCase
 		$this->assertTemplateResult('|,.:', '|,.:');
 		$this->assertTemplateResult('', '');
 
-		$text = "this shouldnt see any transformation either but has multiple lines
+		$text = "this shouldn't see any transformation either but has multiple lines
 		         as you can clearly see here ...";
 
 		$this->assertTemplateResult($text, $text);
